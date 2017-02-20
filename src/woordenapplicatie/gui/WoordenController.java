@@ -15,6 +15,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import woordenapplicatie.WoordenApplicatie;
 
 /**
  * FXML Controller class
@@ -63,7 +64,8 @@ public class WoordenController implements Initializable {
     
     @FXML
     private void aantalAction(ActionEvent event) {
-         throw new UnsupportedOperationException("Not supported yet."); 
+        WoordenApplicatie wp = new WoordenApplicatie();
+        taOutput.setText(wp.CountWord(taInput.getText())); 
     }
 
     @FXML

@@ -30,15 +30,11 @@ public class WoordenApplicatie extends Application {
     }
     
     // Telt het aantal woorden.
-     public String CountWord(String word) {
-        // Controleer of de string niet leeg is.
-         if (word == null) {
-            return "Het totaal aantal woorden is: 0";
-        }
-        // split de string op spaties, komma's en punten.
-        String[] woorden = word.split("[\\s,\\.]+");
+    // zet de woorden in een HashSet zo dat de dubbelen woorden er uit worden gefiltert.
+     public String CountWord(String[] woorden) {
+       
         HashSet<String> hash = new HashSet<>();
-        // zet de woorden in een HashSet zo dat de dubbelen woorden er uit worden gefiltert.
+        
         for (String i : woorden) {
             hash.add(i.toLowerCase());
         }
@@ -46,6 +42,18 @@ public class WoordenApplicatie extends Application {
                 + "Verschillende woorden: " + hash.size();
     }
 
+     // Split de string en zet ze in een array.
+    public String[] StringSplitter(String s)
+    {
+         // Controleer of de string niet leeg is.
+        if (s == null) {
+            return null;
+       }
+        // split de string op spaties, komma's en punten.
+       String[] woorden = s.split("[\\s,\\.]+");
+        
+       return woorden;
+    }
     /**
      * @param args the command line arguments
      */

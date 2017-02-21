@@ -65,7 +65,7 @@ public class WoordenController implements Initializable {
     @FXML
     private void aantalAction(ActionEvent event) {
         WoordenApplicatie wp = new WoordenApplicatie();
-        taOutput.setText(wp.CountWord(taInput.getText())); 
+        taOutput.setText(wp.CountWord(wp.StringSplitter(taInput.getText()))); 
     }
 
     @FXML

@@ -8,8 +8,14 @@ package woordenapplicatie;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 import javafx.application.Application;
@@ -72,7 +78,38 @@ public class WoordenApplicatie extends Application {
         return returnString;
     }
     
-   
+    public String FrequentieWoorden(String[] woorden)
+    {
+        String returnString = "";
+        HashMap<String, Integer> map = new HashMap<>();
+        for (String w : woorden)
+        {
+            Integer n = map.get(w);
+            if(n == null)
+                n = 1;
+            else
+                n++;
+            map.put(w, n);
+        }
+        List list = new LinkedList(map.entrySet());
+        Collections.sort(list, new Comparator()
+        {
+            public int compare(Object object1, Object object2)
+            {
+                //Vergelijk values van twee entrys
+                return ((Comparable) ((Map.Entry) (object1)).getValue()).compareTo(((Map.Entry) (object2)).getValue());
+            }
+        });
+        HashMap gesorteerdeMap = new LinkedHashMap();
+        for(Iterator i = list.iterator(); i.hasNext();)
+        {
+            Map.Entry entry = (Map.Entry) i.next();
+            gesorteerdeMap.put(entry.getKey(), entry.getValue());
+            returnString += entry.getKey().toString() + " : " + entry.getValue().toString() + "\n";
+        }
+        return returnString;
+    }
+
     /**
      * @param args the command line arguments
      */

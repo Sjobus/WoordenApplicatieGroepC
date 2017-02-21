@@ -76,7 +76,8 @@ public class WoordenController implements Initializable {
 
     @FXML
     private void frequentieAction(ActionEvent event) {
-         throw new UnsupportedOperationException("Not supported yet."); 
+        WoordenApplicatie wp = new WoordenApplicatie();
+        taOutput.setText(wp.FrequentieWoorden(wp.StringSplitter(taInput.getText())));
     }
 
     @FXML

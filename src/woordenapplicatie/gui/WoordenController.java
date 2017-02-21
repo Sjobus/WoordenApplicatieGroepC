@@ -70,7 +70,8 @@ public class WoordenController implements Initializable {
 
     @FXML
     private void sorteerAction(ActionEvent event) {
-         throw new UnsupportedOperationException("Not supported yet."); 
+        WoordenApplicatie wp = new WoordenApplicatie();
+        taOutput.setText(wp.SorteerWoorden(wp.StringSplitter(taInput.getText())));
     }
 
     @FXML

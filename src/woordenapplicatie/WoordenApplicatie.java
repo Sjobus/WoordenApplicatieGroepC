@@ -6,6 +6,7 @@
 
 package woordenapplicatie;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
@@ -108,6 +109,30 @@ public class WoordenApplicatie extends Application {
             returnString += entry.getKey().toString() + " : " + entry.getValue().toString() + "\n";
         }
         return returnString;
+    }
+    
+    public String wordGetLines( String str)
+    {   HashSet<String> words = new HashSet<String>(Arrays.asList(str.toLowerCase().split("[\\s,\\.]+")));    
+        String[] lines = str.toLowerCase().split("\n");
+        HashMap<String, List<Integer>> concurencyMap = new HashMap<>();
+        int ctr = 1;
+        for (String line : lines) {
+            for (String word : words) {
+                if (line.contains(word)) {
+                    List<Integer> concurency = (concurencyMap.get(word)== null) ?
+                            new ArrayList<>() : concurencyMap.get(word);
+                    concurency.add(ctr);
+                    concurencyMap.put(word, concurency);
+                }
+            }
+            ctr++;
+
+        }
+        String output = "";
+        for (String value : concurencyMap.keySet()) {
+            output += value + ": \t" + concurencyMap.get(value) + "\n";
+        }        
+        return output;
     }
 
     /**

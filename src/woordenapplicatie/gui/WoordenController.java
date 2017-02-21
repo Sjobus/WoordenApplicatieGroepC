@@ -82,7 +82,8 @@ public class WoordenController implements Initializable {
 
     @FXML
     private void concordatieAction(ActionEvent event) {
-         throw new UnsupportedOperationException("Not supported yet."); 
+        WoordenApplicatie wp = new WoordenApplicatie();
+        taOutput.setText(wp.wordGetLines(taInput.getText()));
     }
    
 }

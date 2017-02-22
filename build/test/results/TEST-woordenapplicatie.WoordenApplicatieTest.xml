@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="2" failures="2" hostname="Lenovo_pc" name="woordenapplicatie.WoordenApplicatieTest" skipped="0" tests="4" time="1.052" timestamp="2017-02-22T14:12:21">
+<testsuite errors="3" failures="1" hostname="Lenovo_pc" name="woordenapplicatie.WoordenApplicatieTest" skipped="0" tests="6" time="0.781" timestamp="2017-02-22T15:11:37">
   <properties>
     <property name="netbeans.autoupdate.country" value="NL" />
     <property name="javafx.binarycss" value="false" />
@@ -46,7 +46,7 @@
     <property name="user.name" value="Sibe" />
     <property name="copylibs.rebase" value="true" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner woordenapplicatie.WoordenApplicatieTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\School\Semester 4\JCF41\WoordenApplicatie\build\test\results\TEST-woordenapplicatie.WoordenApplicatieTest.xml crashfile=C:\School\Semester 4\JCF41\WoordenApplicatie\build\junitvmwatcher4330768999034188390.properties propsfile=C:\School\Semester 4\JCF41\WoordenApplicatie\build\junit4753889187072207767.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner woordenapplicatie.WoordenApplicatieTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\School\Semester 4\JCF41\WoordenApplicatie\build\test\results\TEST-woordenapplicatie.WoordenApplicatieTest.xml crashfile=C:\School\Semester 4\JCF41\WoordenApplicatie\build\junitvmwatcher7102899719925853188.properties propsfile=C:\School\Semester 4\JCF41\WoordenApplicatie\build\junit7362607924720650018.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -81,7 +81,7 @@
     <property name="javac.debug" value="true" />
     <property name="javadoc.splitindex" value="true" />
     <property name="file.separator" value="\" />
-    <property name="javac.includesfile.binary" value="C:\School\Semester 4\JCF41\WoordenApplicatie\null1625389635" />
+    <property name="javac.includesfile.binary" value="C:\School\Semester 4\JCF41\WoordenApplicatie\null1209974198" />
     <property name="libs.junit_4.maven-pom" value="" />
     <property name="javac.test.processorpath" value="C:\Program Files\Java\jdk1.8.0_73\jre/lib/javaws.jar:C:\Program Files\Java\jdk1.8.0_73\jre/lib/deploy.jar:C:\Program Files\Java\jdk1.8.0_73\jre/lib/plugin.jar:build/classes:C:\Program Files\NetBeans 8.1\platform\modules\ext\junit-4.12.jar:C:\Program Files\NetBeans 8.1\platform\modules\ext\hamcrest-core-1.3.jar" />
     <property name="netbeans.buildnumber" value="201510222201" />
@@ -340,7 +340,13 @@
     <property name="platform.active" value="default_platform" />
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
   </properties>
-  <testcase classname="woordenapplicatie.WoordenApplicatieTest" name="testStart" time="0.473">
+  <testcase classname="woordenapplicatie.WoordenApplicatieTest" name="testWordGetLines" time="0.036">
+    <failure message="expected:&lt;[]&gt; but was:&lt;[: &#x9;[1]&#xa;]&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;[]&gt; but was:&lt;[: 	[1]
+]&gt;
+	at woordenapplicatie.WoordenApplicatieTest.testWordGetLines(WoordenApplicatieTest.java:131)
+</failure>
+  </testcase>
+  <testcase classname="woordenapplicatie.WoordenApplicatieTest" name="testStart" time="0.446">
     <error type="java.lang.ExceptionInInitializerError">java.lang.ExceptionInInitializerError
 	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
 	at java.lang.Class.newInstance(Class.java:442)
@@ -365,51 +371,29 @@ Caused by: java.lang.IllegalStateException: Toolkit not initialized
 	at javafx.scene.control.Control.&lt;clinit&gt;(Control.java:87)
 </error>
   </testcase>
-  <testcase classname="woordenapplicatie.WoordenApplicatieTest" name="testMain" time="0.332">
-    <error message="Exception in Application start method" type="java.lang.RuntimeException">java.lang.RuntimeException: Exception in Application start method
-	at com.sun.javafx.application.LauncherImpl.launchApplication1(LauncherImpl.java:917)
-	at com.sun.javafx.application.LauncherImpl.lambda$launchApplication$155(LauncherImpl.java:182)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: java.lang.NoClassDefFoundError: Could not initialize class javafx.scene.control.SplitPane
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
-	at java.lang.Class.newInstance(Class.java:442)
-	at javafx.fxml.FXMLLoader$InstanceDeclarationElement.constructValue(FXMLLoader.java:1009)
-	at javafx.fxml.FXMLLoader$ValueElement.processStartElement(FXMLLoader.java:746)
-	at javafx.fxml.FXMLLoader.processStartElement(FXMLLoader.java:2707)
-	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2527)
-	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2441)
-	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3214)
-	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3175)
-	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3148)
-	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3124)
-	at javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3104)
-	at javafx.fxml.FXMLLoader.load(FXMLLoader.java:3097)
-	at woordenapplicatie.WoordenApplicatie.start(WoordenApplicatie.java:36)
-	at com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$162(LauncherImpl.java:863)
-	at com.sun.javafx.application.PlatformImpl.lambda$runAndWait$175(PlatformImpl.java:326)
-	at com.sun.javafx.application.PlatformImpl.lambda$null$173(PlatformImpl.java:295)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at com.sun.javafx.application.PlatformImpl.lambda$runLater$174(PlatformImpl.java:294)
-	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
-	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
-	at com.sun.glass.ui.win.WinApplication.lambda$null$148(WinApplication.java:191)
+  <testcase classname="woordenapplicatie.WoordenApplicatieTest" name="testStringSplitter" time="0.003" />
+  <testcase classname="woordenapplicatie.WoordenApplicatieTest" name="testSorteerWoorden" time="0.0">
+    <error type="java.lang.NullPointerException">java.lang.NullPointerException
+	at java.util.Objects.requireNonNull(Objects.java:203)
+	at java.util.Arrays$ArrayList.&lt;init&gt;(Arrays.java:3813)
+	at java.util.Arrays.asList(Arrays.java:3800)
+	at woordenapplicatie.WoordenApplicatie.SorteerWoorden(WoordenApplicatie.java:74)
+	at woordenapplicatie.WoordenApplicatieTest.testSorteerWoorden(WoordenApplicatieTest.java:102)
 </error>
   </testcase>
-  <testcase classname="woordenapplicatie.WoordenApplicatieTest" name="testStringSplitter" time="0.005">
-    <failure message="StringSplitter Fail." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: StringSplitter Fail.
-	at woordenapplicatie.WoordenApplicatieTest.testStringSplitter(WoordenApplicatieTest.java:92)
-</failure>
+  <testcase classname="woordenapplicatie.WoordenApplicatieTest" name="testFrequentieWoorden" time="0.0">
+    <error type="java.lang.NullPointerException">java.lang.NullPointerException
+	at woordenapplicatie.WoordenApplicatie.FrequentieWoorden(WoordenApplicatie.java:86)
+	at woordenapplicatie.WoordenApplicatieTest.testFrequentieWoorden(WoordenApplicatieTest.java:117)
+</error>
   </testcase>
-  <testcase classname="woordenapplicatie.WoordenApplicatieTest" name="testCountWord" time="0.008">
-    <failure message="CountWord failed." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: CountWord failed.
-	at woordenapplicatie.WoordenApplicatieTest.testCountWord(WoordenApplicatieTest.java:78)
-</failure>
-  </testcase>
-  <system-out><![CDATA[start
-main
+  <testcase classname="woordenapplicatie.WoordenApplicatieTest" name="testCountWord" time="0.0" />
+  <system-out><![CDATA[wordGetLines
+start
 StringSplitter
+SorteerWoorden
+FrequentieWoorden
 CountWord
 ]]></system-out>
-  <system-err><![CDATA[Exception in Application start method
-]]></system-err>
+  <system-err><![CDATA[]]></system-err>
 </testsuite>

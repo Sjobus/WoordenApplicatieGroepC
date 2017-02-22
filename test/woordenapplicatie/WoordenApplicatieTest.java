@@ -55,8 +55,7 @@ public class WoordenApplicatieTest {
         Stage stage = null;
         WoordenApplicatie instance = new WoordenApplicatie();
         instance.start(stage);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
         
     }
 
@@ -75,8 +74,7 @@ public class WoordenApplicatieTest {
                 + "Verschillende woorden: " + testHash.size();
         String result = instance.CountWord(woorden);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("CountWord failed.");
+        
     }
 
     /**
@@ -89,13 +87,12 @@ public class WoordenApplicatieTest {
         String[] expResult = woorden;
         String[] result = instance.StringSplitter(s);
         assertArrayEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("StringSplitter Fail.");
+        
     }
 
     /**
      * Test of SorteerWoorden method, of class WoordenApplicatie.
-     
+    */ 
     @Test
     public void testSorteerWoorden() {
         System.out.println("SorteerWoorden");
@@ -105,13 +102,13 @@ public class WoordenApplicatieTest {
         String result = instance.SorteerWoorden(woorden);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }*/
+        
+    }
 
     /**
      * Test of FrequentieWoorden method, of class WoordenApplicatie.
      */
-    /*@Test
+    @Test
     public void testFrequentieWoorden() {
         System.out.println("FrequentieWoorden");
         String[] woorden = null;
@@ -119,14 +116,12 @@ public class WoordenApplicatieTest {
         String expResult = "";
         String result = instance.FrequentieWoorden(woorden);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }*/
+    }
 
     /**
      * Test of wordGetLines method, of class WoordenApplicatie.
      */
-    /*@Test
+    @Test
     public void testWordGetLines() {
         System.out.println("wordGetLines");
         String str = "";
@@ -134,20 +129,9 @@ public class WoordenApplicatieTest {
         String expResult = "";
         String result = instance.wordGetLines(str);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }*/
 
-    /**
-     * Test of main method, of class WoordenApplicatie.
-     */
-    @Test
-    public void testMain() {
-        System.out.println("main");
-        String[] args = null;
-        WoordenApplicatie.main(args);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
+
+   
     
 }

@@ -5,6 +5,10 @@
  */
 package woordenapplicatie;
 
+import java.util.HashSet;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -12,13 +16,15 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import javafx.application.Application;
 
 /**
  *
  * @author Sibe
  */
 public class WoordenApplicatieTest {
-    
+    public String s = "Een, twee, drie, vier";
+    public String[] woorden = s.toLowerCase().split("[\\s,\\.]+");
     public WoordenApplicatieTest() {
     }
     
@@ -32,6 +38,7 @@ public class WoordenApplicatieTest {
     
     @Before
     public void setUp() {
+        
     }
     
     @After
@@ -40,15 +47,17 @@ public class WoordenApplicatieTest {
 
     /**
      * Test of start method, of class WoordenApplicatie.
+     * @throws java.lang.Exception
      */
     @Test
     public void testStart() throws Exception {
-        System.out.println("start");
+        System.out.println("start");        
         Stage stage = null;
         WoordenApplicatie instance = new WoordenApplicatie();
         instance.start(stage);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -56,14 +65,18 @@ public class WoordenApplicatieTest {
      */
     @Test
     public void testCountWord() {
-        System.out.println("CountWord");
-        String[] woorden = null;
+        System.out.println("CountWord");        
         WoordenApplicatie instance = new WoordenApplicatie();
-        String expResult = "";
+        HashSet<String> testHash = new HashSet<>();
+        for(String i : woorden){
+            testHash.add(i.toLowerCase());
+        }
+        String expResult = "Totaal aantal woorden: " + woorden.length + "\n"
+                + "Verschillende woorden: " + testHash.size();
         String result = instance.CountWord(woorden);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        fail("CountWord failed.");
     }
 
     /**
@@ -71,19 +84,18 @@ public class WoordenApplicatieTest {
      */
     @Test
     public void testStringSplitter() {
-        System.out.println("StringSplitter");
-        String s = "";
+        System.out.println("StringSplitter");        
         WoordenApplicatie instance = new WoordenApplicatie();
-        String[] expResult = null;
+        String[] expResult = woorden;
         String[] result = instance.StringSplitter(s);
         assertArrayEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        fail("StringSplitter Fail.");
     }
 
     /**
      * Test of SorteerWoorden method, of class WoordenApplicatie.
-     */
+     
     @Test
     public void testSorteerWoorden() {
         System.out.println("SorteerWoorden");
@@ -94,12 +106,12 @@ public class WoordenApplicatieTest {
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
-    }
+    }*/
 
     /**
      * Test of FrequentieWoorden method, of class WoordenApplicatie.
      */
-    @Test
+    /*@Test
     public void testFrequentieWoorden() {
         System.out.println("FrequentieWoorden");
         String[] woorden = null;
@@ -109,12 +121,12 @@ public class WoordenApplicatieTest {
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
-    }
+    }*/
 
     /**
      * Test of wordGetLines method, of class WoordenApplicatie.
      */
-    @Test
+    /*@Test
     public void testWordGetLines() {
         System.out.println("wordGetLines");
         String str = "";
@@ -124,7 +136,7 @@ public class WoordenApplicatieTest {
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
-    }
+    }*/
 
     /**
      * Test of main method, of class WoordenApplicatie.

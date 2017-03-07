@@ -23,7 +23,10 @@ import javafx.application.Application;
  * @author Sibe
  */
 public class WoordenApplicatieTest {
-    public String s = "Een, twee, drie, vier";
+    public String s =   "Een, twee, drie, vier\n" +
+                        "Hoedje van, hoedje van\n" +
+                        "Een, twee, drie, vier\n" +
+                        "Hoedje van papier";
     public String[] woorden = s.toLowerCase().split("[\\s,\\.]+");
     public WoordenApplicatieTest() {
     }
@@ -43,20 +46,6 @@ public class WoordenApplicatieTest {
     
     @After
     public void tearDown() {
-    }
-
-    /**
-     * Test of start method, of class WoordenApplicatie.
-     * @throws java.lang.Exception
-     */
-    @Test
-    public void testStart() throws Exception {
-        System.out.println("start");        
-        Stage stage = null;
-        WoordenApplicatie instance = new WoordenApplicatie();
-        instance.start(stage);
-
-        
     }
 
     /**
@@ -96,9 +85,8 @@ public class WoordenApplicatieTest {
     @Test
     public void testSorteerWoorden() {
         System.out.println("SorteerWoorden");
-        String[] woorden = null;
         WoordenApplicatie instance = new WoordenApplicatie();
-        String expResult = "";
+        String expResult = "vier\nvan\ntwee\npapier\nhoedje\neen\ndrie\n";
         String result = instance.SorteerWoorden(woorden);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -111,9 +99,8 @@ public class WoordenApplicatieTest {
     @Test
     public void testFrequentieWoorden() {
         System.out.println("FrequentieWoorden");
-        String[] woorden = null;
         WoordenApplicatie instance = new WoordenApplicatie();
-        String expResult = "";
+        String expResult = "papier : 1\ntwee : 2\ndrie : 2\nvier : 2\neen : 2\nhoedje : 3\nvan : 3\n";
         String result = instance.FrequentieWoorden(woorden);
         assertEquals(expResult, result);
     }
@@ -124,10 +111,9 @@ public class WoordenApplicatieTest {
     @Test
     public void testWordGetLines() {
         System.out.println("wordGetLines");
-        String str = "";
         WoordenApplicatie instance = new WoordenApplicatie();
-        String expResult = "";
-        String result = instance.wordGetLines(str);
+        String expResult = "hoedje: 	[2, 4]\nvan: 	[2, 4]\ndrie: 	[1, 3]\ntwee: 	[1, 3]\nvier: 	[1, 3]\npapier: 	[4]\neen: 	[1, 3]\n";
+        String result = instance.wordGetLines(s);
         assertEquals(expResult, result);
 
     }
